@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
     public Transform cam;
+    public Transform center;
+    public Canvas cursor;
+    //public Transform camParent;
+
     Vector3 dir;
     Renderer rend;
     LineRenderer lineRenderer;
+    
 	// Use this for initialization
 	void Start () {
         lineRenderer = GetComponent<LineRenderer>();
@@ -29,11 +34,27 @@ public class PlayerController : MonoBehaviour {
                 Highlighter h = raycast.transform.gameObject.GetComponent<Highlighter>();
                 h.time = 0.1f;
                 h.hit = true;
-
+                print(raycast.transform.position);
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    move(raycast.transform);
+                }
             }
         }
-        //lineRenderer.SetPosition(0, cam.transform.position);
-        //lineRenderer.SetPosition(1, endPos);
+
+        if(Input.GetButtonDown("Fire2"))
+        {
+            cursor.enabled = !cursor.enabled;
+        }
+
+         
+        
+    }
+
+    void move(Transform platform)
+    {
+        transform.position = new Vector3(platform.position.x, platform.position.y + 2.0f, platform.position.z);
+        transform.LookAt(new Vector3(center.position.x, transform.position.y, center.position.z));
     }
 
 }
