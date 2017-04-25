@@ -126,5 +126,5 @@
 	}
 
 		Fallback "Outlined/Silhouetted Diffuse"
-		Fallback "VertexLit"
+		Fallback "Standard"
 }
