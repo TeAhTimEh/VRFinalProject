@@ -49,7 +49,7 @@
 		ZTest Always
 
 		// you can choose what kind of blending mode you want for the outline
-		Blend SrcAlpha OneMinusSrcAlpha // Normal
+		Blend SrcAlpha OneMinusSrcAlpha  // Normal  SrcAlpha OneMinusSrcAlpha 
 										//Blend One One // Additive
 										//Blend One OneMinusDstColor // Soft Additive
 										//Blend DstColor Zero // Multiplicative
@@ -95,7 +95,7 @@
 		Offset 15,15
 
 		// you can choose what kind of blending mode you want for the outline
-		Blend SrcAlpha OneMinusSrcAlpha // Normal
+		Blend SrcAlpha OneMinusSrcAlpha  // Normal
 										//Blend One One // Additive
 										//Blend One OneMinusDstColor // Soft Additive
 										//Blend DstColor Zero // Multiplicative
