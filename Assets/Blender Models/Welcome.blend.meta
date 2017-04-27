@@ -8,15 +8,22 @@ ModelImporter:
     100000: Text_MeshPart0
     100002: Text_MeshPart1
     100004: //RootNode
+    100006: Cube
+    100008: Text
     400000: Text_MeshPart0
     400002: Text_MeshPart1
     400004: //RootNode
+    400006: Cube
+    400008: Text
     2300000: Text_MeshPart0
     2300002: Text_MeshPart1
+    2300004: Cube
     3300000: Text_MeshPart0
     3300002: Text_MeshPart1
+    3300004: Cube
     4300000: Text_MeshPart0
     4300002: Text_MeshPart1
+    4300004: Cube
     7400000: Default Take
     9500000: //RootNode
   materials:

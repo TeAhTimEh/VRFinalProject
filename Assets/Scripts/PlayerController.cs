@@ -7,16 +7,20 @@ public class PlayerController : MonoBehaviour {
     public Transform center;
     public Canvas cursor;
     public Transform spotlight1, spotlight2;
+    public Transform startPos;
  
 
     Vector3 dir;
     Renderer rend;
     LineRenderer lineRenderer;
+    AudioSource aus;
+    public AudioClip Up, Down, Left, Right, XButt;
 
     
 	// Use this for initialization
 	void Start () {
         lineRenderer = GetComponent<LineRenderer>();
+        aus = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -58,8 +62,41 @@ public class PlayerController : MonoBehaviour {
             placeLight(2);
         }
 
+        if (Input.GetAxis("D-PadUpDown") > 0)
+        {
+            aus.clip = Up;
+            aus.Play();
+        }
+        if (Input.GetAxis("D-PadUpDown") < 0)
+        {
+            aus.clip = Down;
+            aus.Play();
+        }
+        if (Input.GetAxis("D-PadLeftRight") < 0)
+        {
+            aus.clip = Left;
+            aus.Play();
+        }
+        if (Input.GetAxis("D-PadLeftRight") > 0)
+        {
+            aus.clip = Right;
+            aus.Play();
+        }
+        if (Input.GetButtonDown("Fire3"))
+        {
+            aus.clip = XButt;
+            aus.Play();
+        }
+        if (Input.GetButtonDown("Jump"))
+        {
+            Vector3 save = transform.position;
+            transform.position = startPos.position;
+            startPos.position = save;
+        }
 
 
+
+        /////http://jegged.com/Games/Legend-of-Zelda-Ocarina-of-Time/Ocarina-Songs/
     }
 
     void move(Transform platform)
