@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour {
     void move(Transform platform)
     {
         transform.position = new Vector3(platform.position.x, platform.position.y + 2.0f, platform.position.z);
-        transform.LookAt(new Vector3(center.position.x, transform.position.y, center.position.z));
+        //transform.LookAt(new Vector3(center.position.x, transform.position.y, center.position.z));
     }
 
     void placeLight(int light)
